@@ -21,9 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :dev do
-  gem 'opinio'
-end
+gem 'opinio'
 
 gem 'jquery-rails'
 

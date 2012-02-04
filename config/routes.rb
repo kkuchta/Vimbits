@@ -1,4 +1,6 @@
 Vimbits::Application.routes.draw do
+  opinio_model
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

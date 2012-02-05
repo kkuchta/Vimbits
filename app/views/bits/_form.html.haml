@@ -11,11 +11,29 @@
     = f.text_field :title
   .field
     = f.label :code
-    = f.text_field :code
+    = f.text_area :code, rows: 10, class: "span6"
   .field
     = f.label :description
-    = f.text_field :description
+    = f.text_area :description, rows: 4, class: "span6"
   .form-actions
     = f.submit 'Save', class: "btn-primary"
     - if defined?(link_back)
       %a.btn{ href: link_back } Cancel
+
+- content_for :sidebar do
+  %p.bit-instructions
+    Enter some interesting or clever line from your vimrc file.  Small blocks of lines are fine if they're part of the same idea.
+  %dl
+    %dt Title
+    %dd Something descriptive
+    %dt Code
+    %dd
+      %p The vimrc code itself– the minimum code necessary.
+      %p Comments are fine, but use the description for describing the whole thing.
+    %dt Description
+    %dd
+      What does this do? Consider mentioning:
+      %ul
+        %li Plugin dependencies
+        %li Any known Vim version incompatabilities
+        %li Use case examples

@@ -1,13 +1,9 @@
 %p#notice= notice
 
+%h3= @bit.title
 %p
-  %b Title:
-  = @bit.title
-%p
-  %b Code:
   %pre.prettyprint.linenums= @bit.code
 %p
-  %b Description:
   = @bit.description
 
 = link_to 'Edit', edit_bit_path(@bit)

@@ -25,8 +25,6 @@ end
 
 gem 'twitter-bootstrap-rails', :group => :assets
 
-gem 'opinio'
-
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

@@ -1,10 +1,7 @@
 Vimbits::Application.routes.draw do
-  resources :bits
 
   get "welcome/about"
   get "welcome/index"
-
-  opinio_model
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
@@ -12,6 +9,7 @@ Vimbits::Application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :bits
 
   root :to => 'welcome#index'
 

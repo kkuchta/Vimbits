@@ -1,11 +1,16 @@
 Vimbits::Application.routes.draw do
+  get "welcome/index"
+
   opinio_model
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
+
   resources :users
+
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -15,5 +15,7 @@
   .field
     = f.label :description
     = f.text_field :description
-  .actions
-    = f.submit 'Save'
+  .form-actions
+    = f.submit 'Save', class: "btn-primary"
+    - if defined?(link_back)
+      %a.btn{ href: link_back } Cancel

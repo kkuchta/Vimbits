@@ -12,11 +12,11 @@
         %a.brand Vimbits
         %ul.nav
           %li
-            %a{ href:'#' } Vimrc
+            %a{ href:'/bits' } Bits
           %li
-            %a{ href:'#' } Plugins
-          %li
-            %a{ href:'#' } Colorschemes
+            %a{ href:'/welcome/about' } About
+          -#%li
+            -#%a{ href:'#' } Contact
         %ul.nav.pull-right
           - if current_user
             .navbar-text
@@ -37,24 +37,7 @@
   .container
     .row
       .span3
-        .well
-          %ul.nav.nav-list
-            %li.nav-header
-              Thing1
-            %li.active
-              %a{ href:'#' } Thing1
-            %li
-              %a{ href:'#' } Thing2
-            %li
-              %a{ href:'#' } Thing3
-            %li.nav-header
-              Thing1
-            %li
-              %a{ href:'#' } Thing1
-            %li
-              %a{ href:'#' } Thing2
-            %li
-              %a{ href:'#' } Thing3
+        = yield :sidebar
       .content.span9
         = yield
 

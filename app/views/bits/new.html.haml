@@ -1,5 +1,5 @@
-%h1 New bit
+%h1 New Vimbit
 
-= render 'form'
+= render partial: 'form', locals: { link_back: url_for( bits_path ) }
 
 = link_to 'Back', bits_path

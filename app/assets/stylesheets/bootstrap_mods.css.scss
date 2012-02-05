@@ -1,0 +1,13 @@
+/** Fix for bootstrap buttons vertical alignment **/
+// Remove whenever bootstrap fixes https://github.com/twitter/bootstrap/issues/1543
+input.btn,
+input.btn-primary,
+input.btn-success,
+input.btn-danger,
+input.btn-warning,
+input.btn-info,
+input.btn-large,
+input.btn-small {
+    margin-bottom:2px;
+}
+

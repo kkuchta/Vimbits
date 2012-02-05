@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120205001120) do
+ActiveRecord::Schema.define(:version => 20120205030600) do
+
+  create_table "bits", :force => true do |t|
+    t.string   "title"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "owner_id",         :null => false
@@ -27,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20120205001120) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "vimrcs", :force => true do |t|
+    t.string   "title"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

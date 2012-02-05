@@ -1,4 +1,6 @@
 Vimbits::Application.routes.draw do
+  resources :bits
+
   get "welcome/index"
 
   opinio_model

@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
+gem 'bcrypt-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.

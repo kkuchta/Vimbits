@@ -1,6 +1,12 @@
 Vimbits::Application.routes.draw do
   opinio_model
 
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

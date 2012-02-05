@@ -23,6 +23,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'twitter-bootstrap-rails', :group => :assets
+
 gem 'opinio'
 
 gem 'jquery-rails'

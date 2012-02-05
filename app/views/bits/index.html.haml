@@ -1,0 +1,23 @@
+%h1 Listing bits
+
+%table
+  %tr
+    %th Title
+    %th Code
+    %th Description
+    %th
+    %th
+    %th
+
+  - @bits.each do |bit|
+    %tr
+      %td= bit.title
+      %td= bit.code
+      %td= bit.description
+      %td= link_to 'Show', bit
+      %td= link_to 'Edit', edit_bit_path(bit)
+      %td= link_to 'Destroy', bit, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Bit', new_bit_path

@@ -1,0 +1,19 @@
+= form_for @bit do |f|
+  -if @bit.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@bit.errors.count, "error")} prohibited this bit from being saved:"
+      %ul
+        - @bit.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit 'Save'

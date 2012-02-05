@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %title Vimbits
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %a.brand Vimbits
+        %ul.nav
+          %li
+            %a{ href:'#' } Vimrc
+          %li
+            %a{ href:'#' } Plugins
+          %li
+            %a{ href:'#' } Colorschemes
+        .navbar-text.pull-right
+          Logged in as 
+          %a{ href:'#' } username
+  .container
+    .row
+      .span3
+        .well
+          %ul.nav.nav-list
+            %li.nav-header
+              Thing1
+            %li.active
+              %a{ href:'#' } Thing1
+            %li
+              %a{ href:'#' } Thing2
+            %li
+              %a{ href:'#' } Thing3
+            %li.nav-header
+              Thing1
+            %li
+              %a{ href:'#' } Thing1
+            %li
+              %a{ href:'#' } Thing2
+            %li
+              %a{ href:'#' } Thing3
+      .span9
+        = yield
+

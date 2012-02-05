@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 gem 'haml'
+gem 'haml-rails'
 gem 'acts-as-taggable-on'
 
 # Gems used only for assets and not required

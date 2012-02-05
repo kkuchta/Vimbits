@@ -56,11 +56,6 @@ module Vimbits
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    #Use haml for generated view
-    config.generators do |g|
-      g.template_engine :haml
-    end    
-    
   end
 end
 

@@ -13,8 +13,10 @@
   %p
     %pre.prettyprint.linenums= @bit.code
   %p
+    = @bit.user.email + ": "
+  %p
     = @bit.description
-
-= link_to 'Edit', edit_bit_path(@bit)
-\|
-= link_to 'Back', bits_path
+- if can? :update, @bit
+  = link_to 'Edit', edit_bit_path(@bit)
+  \|
+  = link_to 'Back', bits_path

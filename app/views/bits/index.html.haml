@@ -19,5 +19,5 @@
       %td= link_to 'Destroy', bit, :confirm => 'Are you sure?', :method => :delete
 
 %br
-
-= link_to 'New Bit', new_bit_path
+- if can? :create, Bit
+  = link_to 'New Bit', new_bit_path

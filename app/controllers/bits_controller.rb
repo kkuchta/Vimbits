@@ -1,4 +1,6 @@
 class BitsController < ApplicationController
+  load_and_authorize_resource
+
   # GET /bits
   # GET /bits.json
   def index
@@ -40,7 +42,9 @@ class BitsController < ApplicationController
   # POST /bits
   # POST /bits.json
   def create
+    #params[:bit][:owner] = current_user
     @bit = Bit.new(params[:bit])
+    @bit.user = current_user
 
     respond_to do |format|
       if @bit.save

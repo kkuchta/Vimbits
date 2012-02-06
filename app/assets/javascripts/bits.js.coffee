@@ -12,6 +12,7 @@ vote = (id, direction) ->
     if (direction == 'up' || direction == 'down')
         console.log( 'voting2' )
         $.ajax(
+            # Yeah, yeah, violating hateoas here, will fix later.
             url: '/bits/' + id + '/votes'
             type: 'put'
             data: { direction: direction }

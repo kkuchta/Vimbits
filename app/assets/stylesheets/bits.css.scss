@@ -7,3 +7,11 @@
     padding-top:40px;
   }
 }
+.content{
+  .bit{
+    .upvote:hover, .downvote:hover{
+      opacity:.60;
+      cursor:pointer;
+    }
+  }
+}

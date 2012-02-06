@@ -1,0 +1,17 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - for message in @user.errors.full_messages
+          %li= message
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .form-actions= f.submit class: 'btn btn-primary'

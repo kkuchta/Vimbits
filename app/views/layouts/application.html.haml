@@ -9,31 +9,27 @@
   .navbar.navbar-fixed-top
     .navbar-inner
       .container
-        %a.brand Vimbits
+        %a.brand{ href:"/" } Vimbits
         %ul.nav
           %li
             %a{ href:'/bits' } Bits
           %li
             %a{ href:'/welcome/about' } About
-          -#%li
-            -#%a{ href:'#' } Contact
         %ul.nav.pull-right
           - if current_user
             .navbar-text
               Logged in as 
-              %a{ href:'#' }= current_user.email
+              %a{ href:edit_user_path(current_user) }= current_user.email
           - else
             %li
               %a{ href:"/users/new" } Sign Up
             %li.divider-vertical
             %li
-              - if current_user
-              - else
-                %form.navbar-form.pull-right{ action: "/sessions", method: 'post' }
-                  %input.input-small{ name: 'email', type: 'text', placeholder: "Email" }
-                  %input.input-small{ name: 'password', type: 'password', placeholder: "Password" }
-                  -#%input{ name: 'redirect', type: 'hidden', value: request.url }
-                  %button.btn{ type: 'submit' } Sign In
+              %form.navbar-form.pull-right{ action: "/sessions", method: 'post' }
+                %input.input-small{ name: 'email', type: 'text', placeholder: "Email" }
+                %input.input-small{ name: 'password', type: 'password', placeholder: "Password" }
+                -#%input{ name: 'redirect', type: 'hidden', value: request.url }
+                %button.btn{ type: 'submit' } Sign In
   .container
     .row
       .span3.sidebar

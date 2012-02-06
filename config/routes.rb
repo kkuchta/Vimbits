@@ -9,7 +9,12 @@ Vimbits::Application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :bits
+  resources :bits do
+    member do
+      put 'votes'
+      get 'votes'
+    end
+  end
 
   root :to => 'welcome#index'
 

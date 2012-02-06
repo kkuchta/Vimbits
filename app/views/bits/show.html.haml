@@ -1,10 +1,19 @@
+-content_for :javascript_includes do
+  = javascript_include_tag "vote_ui.js"
+
 %p#notice= notice
 
-%h3= @bit.title
-%p
-  %pre.prettyprint.linenums= @bit.code
-%p
-  = @bit.description
+.bit
+  .row
+    .span4
+      %h3
+        %i.icon-arrow-up.upvote{ bit_id: @bit.id }
+        %i.icon-arrow-down.downvote{ bit_id: @bit.id }
+        = ('(' + @bit.plusminus.to_s + ')'+ @bit.title)
+  %p
+    %pre.prettyprint.linenums= @bit.code
+  %p
+    = @bit.description
 
 = link_to 'Edit', edit_bit_path(@bit)
 \|

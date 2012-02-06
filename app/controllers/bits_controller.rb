@@ -69,6 +69,21 @@ class BitsController < ApplicationController
     end
   end
 
+  def votes
+    @bit = Bit.find(params[:id])
+    if request.get?
+      render json: {votes: @bit.plusminus}
+    elsif request.put?
+      case params[:direction]
+        when 'up'
+          current_user.vote_exclusively_for(@bit)
+        when 'down'
+          current_user.vote_exclusively_against(@bit)
+      end
+      head :no_content
+    end
+  end
+
   # DELETE /bits/1
   # DELETE /bits/1.json
   def destroy

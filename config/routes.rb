@@ -1,5 +1,7 @@
 Vimbits::Application.routes.draw do
 
+  opinio_model
+
   get "welcome/about"
   get "welcome/index"
 
@@ -10,6 +12,7 @@ Vimbits::Application.routes.draw do
   resources :users
   resources :sessions
   resources :bits do
+    opinio
     member do
       put 'votes'
       get 'votes'

@@ -10,6 +10,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby'
+gem "opinio", "~> 0.4"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,3 +44,5 @@ gem 'cancan'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem "kaminari"

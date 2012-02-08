@@ -3,4 +3,5 @@ class Bit < ActiveRecord::Base
   attr_accessible :title, :code, :description
   belongs_to :user
   acts_as_voteable
+  opinio_subjectum
 end

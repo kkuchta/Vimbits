@@ -16,6 +16,8 @@
     = @bit.user.email + ": "
   %p
     = @bit.description
+  %p
+    = comments_for @bit
 - if can? :update, @bit
   = link_to 'Edit', edit_bit_path(@bit)
   \|

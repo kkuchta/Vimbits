@@ -14,4 +14,17 @@
       cursor:pointer;
     }
   }
+
+  #comments{
+    list-style:none;
+
+    .comment{
+      .email{
+        font-style:oblique;
+      }
+      .body{
+
+      }
+    }
+  }
 }

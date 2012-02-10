@@ -9,11 +9,13 @@
       %h3
         %i.icon-arrow-up.upvote{ bit_id: @bit.id }
         %i.icon-arrow-down.downvote{ bit_id: @bit.id }
-        = ('(' + @bit.plusminus.to_s + ')'+ @bit.title)
+        = ('(' + @bit.plusminus.to_s + ')')
+        = @bit.title
+      %span.email
+        %i
+          = @bit.user.email
   %p
     %pre.prettyprint.linenums= @bit.code
-  %p
-    = @bit.user.email + ": "
   %p
     = @bit.description
   %p

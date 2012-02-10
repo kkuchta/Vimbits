@@ -1,0 +1,11 @@
+%div
+  = paginate comments
+%div#comments
+  .row
+    - unless comments.empty?
+      = render :partial => 'opinio/comments/comment', :collection => comments
+    - else
+      %div#no_comments.span2.well= t 'opinio.no_comments_found', :default => "No comments found"
+%div
+  = paginate comments
+

@@ -1,6 +1,5 @@
-%hr
 
-%div.span8.well.comment{:id => "comment_#{comment.id}"}
+.span8.well.comment{:id => "comment_#{comment.id}"}
   %p.email= comment.owner.email + " – " + comment.created_at.strftime( '%b %e, %Y' )
   %p.body
     = comment.body

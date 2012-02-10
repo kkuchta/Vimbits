@@ -14,6 +14,8 @@
       %span.email
         %i
           = @bit.user.email
+        posted this on
+        = @bit.created_at.strftime( '%B %e, %Y' )
   %p
     %pre.prettyprint.linenums= @bit.code
   %p

@@ -21,6 +21,10 @@
   %p
     = @bit.description
   %p
+    - @bit.tag_list.each do |t|
+      %a.label.label-info.tag{href: '/bits?tag='+t}
+        = t
+  %p
     = comments_for @bit
 - if can? :update, @bit
   = link_to 'Edit', edit_bit_path(@bit)

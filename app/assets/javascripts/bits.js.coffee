@@ -5,6 +5,13 @@
 $( () ->
     $('.bit .upvote').click( (e)-> vote($(this).attr('bit_id'),'up') )
     $('.bit .downvote').click( (e)-> vote($(this).attr('bit_id'),'down') )
+    if( typeof allTags != 'undefined')
+        console.log 'defining tagbox'
+        $('.tagBox').textext {
+            plugins : 'autocomplete suggestions tags',
+            suggestions: allTags
+        }
+    
 )
 
 vote = (id, direction) ->

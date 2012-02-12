@@ -43,7 +43,9 @@ class BitsController < ApplicationController
   # POST /bits.json
   def create
     #params[:bit][:owner] = current_user
+    tag_list = ActiveSupport::JSON.decode(params[:tag_list])
     @bit = Bit.new(params[:bit])
+    @bit.tag_list = tag_list
     @bit.user = current_user
 
     respond_to do |format|
@@ -60,7 +62,9 @@ class BitsController < ApplicationController
   # PUT /bits/1
   # PUT /bits/1.json
   def update
+    tag_list = ActiveSupport::JSON.decode(params[:tag_list])
     @bit = Bit.find(params[:id])
+    @bit.tag_list = tag_list
 
     respond_to do |format|
       if @bit.update_attributes(params[:bit])

@@ -1,3 +1,5 @@
+= render 'tags'
+
 = form_for @bit do |f|
   -if @bit.errors.any?
     #error_explanation
@@ -15,6 +17,9 @@
   .field
     = f.label :description
     = f.text_area :description, rows: 4, class: "span6"
+  .field
+    %label{ for: 'tag_list' } Tags (hit enter to add tag)
+    %textarea.tagBox{ rows:1, name:'tag_list' }
   .form-actions
     = f.submit 'Save', class: "btn-primary"
     - if defined?(link_back)

@@ -10,3 +10,11 @@
 u1 = User.create!( email: "user1", password: "asdf")
 u2 = User.create!( email: "user2", password: "asdf")
 
+b1 = Bit.create!( title: "some bit",
+                 code: "Code here \nCode here \nCode here \nCode here \n",
+                 description: "Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever Whatever"
+      )
+b1.user = u1
+b1.tag_list = [ "tagTheFirst", "tagTheSecond" ]
+b1.save
+

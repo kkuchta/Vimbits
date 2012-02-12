@@ -4,4 +4,5 @@ class Bit < ActiveRecord::Base
   belongs_to :user
   acts_as_voteable
   opinio_subjectum
+  acts_as_taggable
 end

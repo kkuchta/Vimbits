@@ -7,10 +7,14 @@ $( () ->
     $('.bit .downvote').click( (e)-> vote($(this).attr('bit_id'),'down') )
     if( typeof allTags != 'undefined')
         console.log 'defining tagbox'
-        $('.tagBox').textext {
-            plugins : 'autocomplete suggestions tags',
+        textext = $('.tagBox').textext {
+            plugins : 'prompt autocomplete suggestions tags',
+            prompt : 'add tags...',
+            tags : { 'foo', 'bar' },
             suggestions: allTags
         }
+        if(typeof window.oldTags != 'undefined')
+            textext.textext()[0].tags().addTags(window.oldTags)
     
 )
 

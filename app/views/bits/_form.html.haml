@@ -20,6 +20,9 @@
   .field
     %label{ for: 'tag_list' } Tags (hit enter to add tag)
     %textarea.tagBox{ rows:1, name:'tag_list' }
+    <script type="text/javascript">
+    = "window.oldTags = [" + @bit.tag_list.map {|t| "'" + t + "'"} .join(',') + "]"
+    </script>
   .form-actions
     = f.submit 'Save', class: "btn-primary"
     - if defined?(link_back)

@@ -4,23 +4,26 @@
   - @bits.each do |bit|
     .bit.row
       .row
-        %h4.span12
-          %i.icon-arrow-up.upvote{ bit_id: bit.id }
-          %i.icon-arrow-down.downvote{ bit_id: bit.id }
-          = ('(' + bit.plusminus.to_s + ')')
-          .row
-            %a.span6{ href: url_for( bit ) }
+        .span8.row.header
+          .vote-box
+            %i.icon-arrow-up.upvote{ bit_id: bit.id }
+
+            .vote-count= bit.plusminus.to_s
+
+            %i.icon-arrow-down.downvote{ bit_id: bit.id }
+          .title
+            %a{ href: url_for( bit ) }
               = bit.title
-          .row
-            .span6
+            .tags
               - bit.tag_list.each do |t|
                 %a.label.label-info.tag{href: '/bits?tag='+t}
                   = t
+
       .row
         .span8.code
-          %pre.prettyprint.linenums= bit.code
+          %pre.prettyprint.linenums= limit_string bit.code
       .row
-        .span8= bit.description
+        .span8= limit_string bit.description, 2, 250
       - if can? :manage, bit
         .row
           .span8.btn-group

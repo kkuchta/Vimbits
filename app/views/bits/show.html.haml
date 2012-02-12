@@ -19,7 +19,7 @@
   %p
     %pre.prettyprint.linenums= @bit.code
   %p
-    = @bit.description
+    = raw @markdown.render(@bit.description)
   %p
     - @bit.tag_list.each do |t|
       %a.label.label-info.tag{href: '/bits?tag='+t}

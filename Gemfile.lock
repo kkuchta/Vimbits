@@ -106,6 +106,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.1.0)
     sass (3.1.12)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -148,6 +149,7 @@ DEPENDENCIES
   kaminari
   opinio (~> 0.4)
   rails (= 3.2.1)
+  redcarpet
   sass-rails (~> 3.2.3)
   sqlite3
   thumbs_up

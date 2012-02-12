@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'thumbs_up'
 gem 'cancan'
 gem 'kaminari'
+gem 'redcarpet'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

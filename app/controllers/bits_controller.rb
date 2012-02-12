@@ -6,6 +6,7 @@ class BitsController < ApplicationController
   def index
     @bits = Bit
 
+    @markdown = markdown
     if params[:tag]
       @bits = @bits.tagged_with params[:tag]
     end
@@ -22,6 +23,7 @@ class BitsController < ApplicationController
   # GET /bits/1.json
   def show
     @bit = Bit.find(params[:id])
+    @markdown = markdown
 
     respond_to do |format|
       format.html # show.html.erb

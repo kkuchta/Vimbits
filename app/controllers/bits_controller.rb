@@ -4,7 +4,12 @@ class BitsController < ApplicationController
   # GET /bits
   # GET /bits.json
   def index
-    @bits = Bit.all
+
+    if params[:tag]
+      @bits = Bit.tagged_with params[:tag]
+    else
+      @bits = Bit.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

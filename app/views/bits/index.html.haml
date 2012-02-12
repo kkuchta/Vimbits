@@ -17,6 +17,7 @@
       %td= link_to 'Show', bit
       %td= link_to 'Edit', edit_bit_path(bit)
       %td= link_to 'Destroy', bit, :confirm => 'Are you sure?', :method => :delete
+= paginate @bits
 
 %br
 - if can? :create, Bit

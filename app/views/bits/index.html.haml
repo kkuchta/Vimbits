@@ -22,8 +22,8 @@
       .row
         .span8.code
           %pre.prettyprint.linenums= limit_string bit.code
-      .row
-        .span8= raw limit_string(@markdown.render(bit.description),2,200)
+      -#.row
+        -#.span8= raw limit_string(@markdown.render(bit.description),2,200)
       - if can? :manage, bit
         .row
           .span8.btn-group

@@ -7,6 +7,7 @@ class Ability
     # If logged in
     if user
       can :create, Bit
+      can :votes, Bit
 
       # Can manage Bits you created.
       can :manage, Bit, user: user

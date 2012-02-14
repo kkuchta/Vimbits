@@ -6,6 +6,15 @@ class BitsController < ApplicationController
   def index
     @bits = Bit
 
+    case params[:sort]
+    when "new"
+      @bits = @bits.order("created_at DESC")
+    when "top"
+      @bits = @bits.plusminus_tally
+    when "rand"
+      @bits = @bits.order("random()")
+    end
+
     @markdown = markdown
     if params[:tag]
       @bits = @bits.tagged_with params[:tag]

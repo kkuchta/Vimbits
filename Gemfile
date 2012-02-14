@@ -31,6 +31,7 @@ gem 'thumbs_up'
 gem 'cancan'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

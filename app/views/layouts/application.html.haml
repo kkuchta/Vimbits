@@ -17,9 +17,13 @@
             %a{ href:'/welcome/about' } About
         %ul.nav.pull-right
           - if current_user
-            .navbar-text
-              Logged in as 
-              %a{ href:edit_user_path(current_user) }= current_user.email
+            %li
+              %a{ href:logout_path } Logout
+            %li.divider-vertical
+            %li
+              .navbar-text
+                Logged in as 
+                %a{ href:edit_user_path(current_user) }= current_user.email
           - else
             %li
               %a{ href:"/users/new" } Sign Up

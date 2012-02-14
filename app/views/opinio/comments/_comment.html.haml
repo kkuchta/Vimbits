@@ -4,5 +4,6 @@
   %p.body
     = comment.body
 
-  = link_to 'Delete', comment_path(comment), :method => :delete, :remote => true
+  - if can? :destroy, comment
+    = link_to 'Delete', comment_path(comment), :method => :delete, :remote => true
 

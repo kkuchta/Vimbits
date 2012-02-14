@@ -10,6 +10,7 @@ class Ability
 
       # Can manage Bits you created.
       can :manage, Bit, user: user
+      can :manage, Comment, owner: user
     end
 
     #if user.admin?

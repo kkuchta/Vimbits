@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  comment_destroy_conditions do |comment|
+    can? :manage, comment
+  end
 
   private  
 

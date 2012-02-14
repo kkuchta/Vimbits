@@ -9,10 +9,14 @@ class BitsController < ApplicationController
     case params[:sort]
     when "new"
       @bits = @bits.order("created_at DESC")
-    when "top"
-      @bits = @bits.plusminus_tally
+      @title = "New Vimbits"
     when "rand"
       @bits = @bits.order("random()")
+      @title = "Random Vimbits"
+    else
+      # Top vimbits
+      @bits = @bits.plusminus_tally
+      @title = "Top Vimbits"
     end
 
     @markdown = markdown

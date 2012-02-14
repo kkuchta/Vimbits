@@ -1,4 +1,4 @@
-%h1 Listing bits
+%h1= @title
 
 .bit-list
   - @bits.each do |bit|
@@ -32,6 +32,3 @@
     %hr
 = paginate @bits
 
-%br
-- if can? :create, Bit
-  = link_to 'New Bit', new_bit_path

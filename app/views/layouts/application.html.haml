@@ -12,7 +12,16 @@
         %a.brand{ href:"/" } Vimbits
         %ul.nav
           %li
-            %a{ href:'/bits' } Bits
+            %a{ href:'/bits?sort=top' } Top
+          %li
+            %a{ href:'/bits?sort=new' } Newest
+          %li
+            %a{ href:'/bits?sort=rand' } Random
+          - if can? :create, Bit
+            %li.divider-vertical
+            %li
+              = link_to 'New Vimbit', new_bit_path
+          %li.divider-vertical
           %li
             %a{ href:'/welcome/about' } About
         %ul.nav.pull-right

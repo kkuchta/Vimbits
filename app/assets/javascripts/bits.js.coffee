@@ -13,6 +13,11 @@ $( () ->
             suggestions: allTags,
             tagsItems: window.oldTags
         }
+
+    #$('.tag-search-button').click{
+
+        #return false;
+    #}
 )
 
 vote = (id, direction) ->

@@ -1,8 +1,14 @@
+
 %h1= @title
 
--#.row
-  -#.span8
-    -#%textarea{ rows: 1 }
+.row
+  .span8
+    %form{ method:'get', action:('/bits') }
+      - if params[:sort]
+        %input{ type:'hidden', name:'sort', value: params[:sort] }
+      %textarea.tagBox{ rows: 1, name:'tags' }
+      %input.btn{ type:'submit' }
+= render "tags"
 
 .bit-list
   - @bits.each do |bit|

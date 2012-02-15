@@ -20,8 +20,17 @@ class BitsController < ApplicationController
     end
 
     @markdown = markdown
+
+    # :tag is a single tag string.
     if params[:tag]
       @bits = @bits.tagged_with params[:tag]
+    # :tags is a json tag string array
+    # (only uses first tag for now)
+    elsif params[:tags]
+      tagsArray = ActiveSupport::JSON.decode(params[:tags])
+      if tagsArray.length > 0
+        @bits = @bits.tagged_with tagsArray.first
+      end
     end
 
     @bits = @bits.page params[:page]

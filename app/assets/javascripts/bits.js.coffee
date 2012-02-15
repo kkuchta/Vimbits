@@ -10,12 +10,9 @@ $( () ->
         textext = $('.tagBox').textext {
             plugins : 'prompt autocomplete suggestions tags',
             prompt : 'add tags...',
-            tags : { 'foo', 'bar' },
-            suggestions: allTags
+            suggestions: allTags,
+            tagsItems: window.oldTags
         }
-        if(typeof window.oldTags != 'undefined')
-            textext.textext()[0].tags().addTags(window.oldTags)
-    
 )
 
 vote = (id, direction) ->

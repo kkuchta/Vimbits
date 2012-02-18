@@ -2,15 +2,20 @@
 %h1= @title
 
 .row
-  .span8
-    %form{ method:'get', action:('/bits') }
+  %form.tag-search{ method:'get', action:('/bits') }
+    .span3
       - if params[:sort]
         %input{ type:'hidden', name:'sort', value: params[:sort] }
       %textarea.singleTagBox{ rows: 1, name:'tag' }
+    .span3
       %input.btn{ type:'submit' }
 = render "tags"
 
 .bit-list
+  - if @bits.length == 0
+    .bit.row
+      .well.span2
+        No vimbits found
   - @bits.each do |bit|
     .bit.row
       .row

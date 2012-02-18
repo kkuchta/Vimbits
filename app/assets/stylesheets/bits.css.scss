@@ -16,6 +16,18 @@
     .tag{
       margin-right:5px;
     }
+
+  }
+
+  form.tag-search{
+    margin-bottom: 50px;
+    margin-top:10px;
+
+    .btn[type="submit"]{
+      position:relative;
+      top:-4px;
+      left:-15px;
+    }
   }
 
   .bit-list{

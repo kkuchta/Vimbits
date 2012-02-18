@@ -6,7 +6,7 @@
     %form{ method:'get', action:('/bits') }
       - if params[:sort]
         %input{ type:'hidden', name:'sort', value: params[:sort] }
-      %textarea.tagBox{ rows: 1, name:'tags' }
+      %textarea.singleTagBox{ rows: 1, name:'tag' }
       %input.btn{ type:'submit' }
 = render "tags"
 

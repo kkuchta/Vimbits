@@ -7,11 +7,17 @@ $( () ->
     $('.bit .downvote').click( (e)-> vote($(this).attr('bit_id'),'down') )
     if( typeof allTags != 'undefined')
         console.log 'defining tagbox'
-        textext = $('.tagBox').textext {
+        $('.tagBox').textext {
             plugins : 'prompt autocomplete suggestions tags',
             prompt : 'add tags...',
             suggestions: allTags,
             tagsItems: window.oldTags
+        }
+        $singleTagBox = $('.singleTagBox')
+        textext = $singleTagBox.textext {
+            plugins : 'prompt autocomplete suggestions',
+            prompt : 'Tag search...',
+            suggestions: allTags
         }
 
     #$('.tag-search-button').click{

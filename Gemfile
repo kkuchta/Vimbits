@@ -5,12 +5,16 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby'
 gem "opinio", "~> 0.4"
+
+group :development do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

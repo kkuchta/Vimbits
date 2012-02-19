@@ -45,8 +45,14 @@
                 %button.btn{ type: 'submit' } Sign In
   .container
     .row
-      .span3.sidebar
-        = yield :sidebar
-      .content.span9
+      .content.span12
         = yield
+    %hr
+    %footer
+      %p
+        %a{href:"http://www.kevinkuchta.com"} Kevin Kuchta
+        built this.  Complain at him on
+        %a{href:"http://www.github.com/kkuchta"} Github
+        or
+        %a{href:"http://www.twitter.com/kkuchta"} Twitter
 

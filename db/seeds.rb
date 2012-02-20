@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-u1 = User.create!( email: "user1", password: "asdf")
+u1 = User.create!( email: "default_user", password: "ueAvpNaGxDsTFYxQasJSQLxkq6E2IBMpmsn4YH3B")
 u2 = User.create!( email: "user2", password: "asdf")
 
 ( 1..50 ).each do |i|
@@ -21,9 +21,9 @@ endif",
                    
 Seems silly.
 
-This line remaps it to the intuitive shift-h and shift-l (H and L)."
+This line remaps it to the intuitive shift-h and shift-l (H and L).", user: u1
         )
-  b.user = u1
+  #b.user = u1
   b.tag_list = [ "tagTheFirst", "tagTheSecond" ]
   if( i % 2 == 0)
     b.tag_list.push "mod2"

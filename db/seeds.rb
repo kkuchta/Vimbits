@@ -8,6 +8,8 @@
 
 
 u1 = User.create!( email: "default_user", password: "ueAvpNaGxDsTFYxQasJSQLxkq6E2IBMpmsn4YH3B")
+u1.admin = true;
+u1.save
 u2 = User.create!( email: "user2", password: "asdf")
 
 ( 1..50 ).each do |i|

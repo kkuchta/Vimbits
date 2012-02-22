@@ -6,6 +6,11 @@ class Ability
 
     # If logged in
     if user
+
+      # Admins
+      can :manage, :all if user.admin?
+
+      # Normal users
       can :create, Bit
       can :votes, Bit
 

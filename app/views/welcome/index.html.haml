@@ -15,7 +15,7 @@
   .span6
     %h3
       %a.btn.btn-primary{href: '/bits?sort=new' } Newest:
-      %a{href:url_for(@top)}=@new.title
+      %a{href:url_for(@new)}=@new.title
     %p
       %pre.prettyprint.linenums= limit_string @new.code
 .blog

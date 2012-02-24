@@ -17,13 +17,14 @@
     %pre.prettyprint.linenums= @bit.code
   %p
     = raw @markdown.render(@bit.description)
+  %p.btn-group
+    - if can? :update, @bit
+      = link_to 'Edit', edit_bit_path(@bit), class: 'btn'
+    - if can? :destroy, @bit
+      = link_to 'Destroy', @bit, confirm: 'Are you sure?', method: :delete, class: 'btn'
   %p
     - @bit.tag_list.each do |t|
       %a.label.label-info.tag{href: '/bits?tag='+t}
         = t
   %p
     = comments_for @bit
-- if can? :update, @bit
-  = link_to 'Edit', edit_bit_path(@bit)
-  \|
-  = link_to 'Back', bits_path

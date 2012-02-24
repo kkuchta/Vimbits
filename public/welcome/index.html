@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vimbits</title>
+    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/bits.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/bootstrap_mods.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/global.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/users.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/welcome.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/twitter/bootstrap.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/google-code-prettify/prettify.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+    <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+    <script src="/assets/textext.jquery.js?body=1" type="text/javascript"></script>
+    <script src="/assets/bits.js?body=1" type="text/javascript"></script>
+    <script src="/assets/init.js?body=1" type="text/javascript"></script>
+    <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+    <script src="/assets/users.js?body=1" type="text/javascript"></script>
+    <script src="/assets/welcome.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-transition.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-alert.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-modal.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-tab.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-popover.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-button.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+    <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
+    <script src="/assets/google-code-prettify/prettify.js?body=1" type="text/javascript"></script>
+    <script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="pzwYOSF4PHguqziMcbkHjJ6Vs1RMc5rHfofQtaPZP1g=" name="csrf-token" />
+    <script>
+      //<![CDATA[
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27863897-2']);
+        _gaq.push(['_setDomainName', 'vimbits.com']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      //]]>
+    </script>
+  </head>
+  <body></body>
+  <div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner'>
+      <div class='container'>
+        <a class='brand' href='/'>Vimbits</a>
+        <ul class='nav'>
+          <li>
+            <a href='/bits?sort=top'>Top</a>
+          </li>
+          <li>
+            <a href='/bits?sort=new'>Newest</a>
+          </li>
+          <li>
+            <a href='/bits?sort=rand'>Random</a>
+          </li>
+          <li class='divider-vertical'></li>
+          <li>
+            <a href='/welcome/about'>About</a>
+          </li>
+        </ul>
+        <ul class='nav pull-right'>
+          <li>
+            <a href='/users/new'>Sign Up</a>
+          </li>
+          <li class='divider-vertical'></li>
+          <li>
+            <form action='/sessions' class='navbar-form pull-right' method='post'>
+              <input class='input-small' name='email' placeholder='Email' type='text'>
+              <input class='input-small' name='password' placeholder='Password' type='password'>
+              <button class='btn' type='submit'>Sign In</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='content span12'>
+        <div class='row'>
+          <div class='span12'>
+            <header class='hero-unit'>
+              <h1>Vimbits</h1>
+              <p>A vimbit is a snippet of a .vimrc.  Share you coolest trick, mapping, setting, or custom command for the Vim editor.  Find new bits and vote up the best ones.</p>
+              <p>
+                <em>:set awesome=on</em>
+              </p>
+            </header>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='span6'>
+            <h3>
+              <a class='btn btn-primary' href='/bits?sort=top'>Top:</a>
+              <a href='/bits/2'>2 Easier end and beginning of line movement</a>
+            </h3>
+            <p>
+              <pre class='prettyprint linenums'>if exists('+colorcolumn')&#x000A;  set colorcolumn=80&#x000A;else&#x000A;  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '%&gt;80v.+', -1)&#x000A;endif</pre>
+            </p>
+          </div>
+          <div class='span6'>
+            <h3>
+              <a class='btn btn-primary' href='/bits?sort=new'>Newest:</a>
+              <a href='/bits/53'>asfdfs</a>
+            </h3>
+            <p>
+              <pre class='prettyprint linenums'>adsfdfd</pre>
+            </p>
+          </div>
+        </div>
+        <div class='blog'>
+          <div class='row'>
+            <div class='span12'>
+              <div class='page-header'>
+                <h2>
+                  Vimbits is open
+                </h2>
+                <code>2/18/12</code>
+                by KKuchta
+              </div>
+              <p>
+                Vimbits is an upvote-downvote site for vimrc tricks.
+              </p>
+              <p>
+                After my first few months in the vimverse, I got a little disheartened that the best way to find new ideas for vim customization seemed to be by crawling through other developers' vimrcs.  Don't get me wrong- that was useful and educational, but I've found that by now, 99% of any given vimrc I've already seen.
+              </p>
+              <p>Vimbits aims to break these down into discrete units that can be tagged, categorized, voted on and ranked.  A newish vim user should be able to skim the 'Top' list and populate their vimrc from there.</p>
+              <p>
+                Some ideas for after launch:
+                <ul>
+                  <li>
+                    Some system to mark vimbits as 'obvious' (eg,
+                    <code>syntax on</code>
+                    or
+                    <code>set hidden</code>
+                    ).
+                    These can be enshrined somewhere visible, but removed from the main 'top' page.
+                  </li>
+                  <li>
+                    Sections for plugins and/or colorschemes
+                  </li>
+                  <li>
+                    Lots of UI improvements
+                  </li>
+                  <li>
+                    Ajaxify some stuff (mostly the index page)
+                  </li>
+                  <li>
+                    Full text searching
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <footer>
+      <p>
+        <a href='http://www.kevinkuchta.com'>Kevin Kuchta</a>
+        built this.  Complain at him on
+        <a href='http://www.github.com/kkuchta'>Github</a>
+        or
+        <a href='http://www.twitter.com/kkuchta'>Twitter</a>
+      </p>
+    </footer>
+  </div>
+</html>

@@ -41,42 +41,43 @@
     }
   }
 
-  .bit-list{
-    .bit{
-      .header{
-        /*height:100px;*/
-        position:relative;
-        /*text-align:center;*/
+  .bit{
+    .header{
+      /*height:100px;*/
+      position:relative;
+      /*text-align:center;*/
+      vertical-align:top;
+
+      .vote-box{
+        display:inline-block;
+
+        .vote-count{
+          font-size:1.25em;
+        }
+      }
+      .title{
+        display:inline-block;
         vertical-align:top;
-
-        .vote-box{
-          display:inline-block;
-
-          .vote-count{
-            font-size:1.25em;
-          }
-        }
-        .title{
-          display:inline-block;
-          vertical-align:top;
-          position:relative;
-          top:10px;
-          margin-left:10px;
-          font-size:1.4em;
-        }
+        position:relative;
+        top:10px;
+        margin-left:10px;
+        font-size:1.4em;
       }
-      .tags{
-        margin-bottom:10px;
-      }
-      .code{
-        margin-left:40px;
-      }
+    }
+    .tags{
+      margin-bottom:10px;
+    }
+    .code{
+      margin-left:40px;
+    }
+    .email{
+      margin-top:10px;
     }
   }
 
   #comments{
     list-style:none;
-    margin-top:40px;
+    margin-top:20px;
 
     .comment{
       .email{

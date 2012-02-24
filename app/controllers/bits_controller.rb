@@ -77,6 +77,7 @@ class BitsController < ApplicationController
     @bit = Bit.new(params[:bit])
     @bit.tag_list = tag_list
     @bit.user = current_user
+    logger.info "params=" + params.inspect
 
     respond_to do |format|
       if @bit.save

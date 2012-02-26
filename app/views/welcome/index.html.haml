@@ -1,53 +1,54 @@
-.row
-  .span12
-    %header.hero-unit
-      %h1 Vimbits
-      %p A vimbit is a snippet of a .vimrc.  Share you coolest trick, mapping, setting, or custom command for the Vim editor.  Find new bits and vote up the best ones.
-      %p
-        %em :set awesome=on
-- if @top and @new
-  .row
-    .span6
-      %h3
-        %a.btn.btn-primary{href: '/bits?sort=top' } Top:
-        %a{href: url_for(@top)}=@top.title
-      %p
-        %pre.prettyprint.linenums= limit_string @top.code
-    .span6
-      %h3
-        %a.btn.btn-primary{href: '/bits?sort=new' } Newest:
-        %a{href:url_for(@new)}=@new.title
-      %p
-        %pre.prettyprint.linenums= limit_string @new.code
-.blog
+- cache do
   .row
     .span12
-      .page-header
-        %h2
-          Vimbits is open
-        %code 2/26/12
-        by KKuchta
-      %p
-        Vimbits is an upvote-downvote site for vimrc tricks.
-      %p
-        After my first few months in the vimverse, I got a little disheartened that the best way to find new ideas for vim customization seemed to be by crawling through other developers' vimrcs.  Don't get me wrong- that was useful and educational, but I've found that by now, 99% of any given vimrc I've already seen.
-      %p Vimbits aims to break these down into discrete units that can be tagged, categorized, voted on and ranked.  A newish vim user should be able to skim the 'Top' list and populate their vimrc from there.
-      %p
-        Some ideas for after launch:
-        %ul
-          %li
-            Some system to mark vimbits as 'obvious' (eg,
-            %code syntax on
-            or
-            %code set hidden
-            ).
-            These can be enshrined somewhere visible, but removed from the main 'top' page.
-          %li
-            Sections for plugins and/or colorschemes
-          %li
-            Lots of UI improvements
-          %li
-            Ajaxify some stuff (mostly the index page)
-          %li
-            Full text searching
+      %header.hero-unit
+        %h1 Vimbits
+        %p A vimbit is a snippet of a .vimrc.  Share you coolest trick, mapping, setting, or custom command for the Vim editor.  Find new bits and vote up the best ones.
+        %p
+          %em :set awesome=on
+  - if @top and @new
+    .row
+      .span6
+        %h3
+          %a.btn.btn-primary{href: '/bits?sort=top' } Top:
+          %a{href: url_for(@top)}=@top.title
+        %p
+          %pre.prettyprint.linenums= limit_string @top.code
+      .span6
+        %h3
+          %a.btn.btn-primary{href: '/bits?sort=new' } Newest:
+          %a{href:url_for(@new)}=@new.title
+        %p
+          %pre.prettyprint.linenums= limit_string @new.code
+  .blog
+    .row
+      .span12
+        .page-header
+          %h2
+            Vimbits is open
+          %code 2/26/12
+          by KKuchta
+        %p
+          Vimbits is an upvote-downvote site for vimrc tricks.
+        %p
+          After my first few months in the vimverse, I got a little disheartened that the best way to find new ideas for vim customization seemed to be by crawling through other developers' vimrcs.  Don't get me wrong- that was useful and educational, but I've found that by now, 99% of any given vimrc I've already seen.
+        %p Vimbits aims to break these down into discrete units that can be tagged, categorized, voted on and ranked.  A newish vim user should be able to skim the 'Top' list and populate their vimrc from there.
+        %p
+          Some ideas for after launch:
+          %ul
+            %li
+              Some system to mark vimbits as 'obvious' (eg,
+              %code syntax on
+              or
+              %code set hidden
+              ).
+              These can be enshrined somewhere visible, but removed from the main 'top' page.
+            %li
+              Sections for plugins and/or colorschemes
+            %li
+              Lots of UI improvements
+            %li
+              Ajaxify some stuff (mostly the index page)
+            %li
+              Full text searching
 

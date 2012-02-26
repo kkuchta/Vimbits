@@ -82,6 +82,7 @@ class BitsController < ApplicationController
     respond_to do |format|
       if @bit.save
         expire_fragment( :action => 'index' )
+        expire_fragment( controller: 'welcome', action: 'index' )
         format.html { redirect_to @bit, notice: 'Bit was successfully created.' }
         format.json { render json: @bit, status: :created, location: @bit }
       else
@@ -102,6 +103,7 @@ class BitsController < ApplicationController
       if @bit.update_attributes(params[:bit])
         expire_fragment( :action => 'index' )
         expire_fragment( action: 'show', id: params[:id] )
+        expire_fragment( controller: 'welcome', action: 'index' )
         format.html { redirect_to @bit, notice: 'Bit was successfully updated.' }
         format.json { head :no_content }
       else

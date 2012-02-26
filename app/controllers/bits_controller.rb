@@ -1,5 +1,7 @@
 class BitsController < ApplicationController
   load_and_authorize_resource
+  caches_page :index
+  caches_page :show
 
   # GET /bits
   # GET /bits.json
@@ -81,6 +83,9 @@ class BitsController < ApplicationController
 
     respond_to do |format|
       if @bit.save
+        expire_page :action => :index
+        expire_page bit_path(@bit)
+
         format.html { redirect_to @bit, notice: 'Bit was successfully created.' }
         format.json { render json: @bit, status: :created, location: @bit }
       else
@@ -96,6 +101,9 @@ class BitsController < ApplicationController
     tag_list = ActiveSupport::JSON.decode(params[:tag_list])
     @bit = Bit.find(params[:id])
     @bit.tag_list = tag_list
+
+    expire_page :action => :index
+    expire_page bit_path( @bit )
 
     respond_to do |format|
       if @bit.update_attributes(params[:bit])
@@ -113,6 +121,8 @@ class BitsController < ApplicationController
     if request.get?
       render json: {votes: @bit.plusminus}
     elsif request.put?
+      expire_page :action => :index
+      expire_page bit_path( @bit )
       case params[:direction]
         when 'up'
           current_user.vote_exclusively_for(@bit)
@@ -128,6 +138,8 @@ class BitsController < ApplicationController
   def destroy
     @bit = Bit.find(params[:id])
     @bit.destroy
+    expire_page :action => :index
+    expire_page bit_path( @bit )
 
     respond_to do |format|
       format.html { redirect_to bits_url }

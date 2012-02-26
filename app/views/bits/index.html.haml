@@ -1,49 +1,45 @@
 
-%h1= @title
+- cache do
+  %h1= @title
 
-.row
-  %form.tag-search{ method:'get', action:('/bits') }
-    .span3
-      - if params[:sort]
-        %input{ type:'hidden', name:'sort', value: params[:sort] }
-      %textarea.singleTagBox{ rows: 1, name:'tag' }
-    .span3
-      %input.btn{ type:'submit' }
-= render "tags"
+  .row
+    %form.tag-search{ method:'get', action:('/bits') }
+      .span3
+        - if params[:sort]
+          %input{ type:'hidden', name:'sort', value: params[:sort] }
+        %textarea.singleTagBox{ rows: 1, name:'tag' }
+      .span3
+        %input.btn{ type:'submit' }
+  = render "tags"
 
-.bit-list
-  - if @bits.length == 0
-    .bit.row
-      .well.span2
-        No vimbits found
-  - @bits.each do |bit|
-    .bit.row
-      .row
-        .span8.row.header
-          .vote-box
-            %i.icon-arrow-up.upvote{ bit_id: bit.id }
-
-            .vote-count= bit.plusminus.to_s
-
-            %i.icon-arrow-down.downvote{ bit_id: bit.id }
-          .title
-            %a{ href: url_for( bit ) }
-              = bit.title
-            .tags
-              - bit.tag_list.each do |t|
-                %a.label.label-info.tag{href: '/bits?tag='+t}
-                  = t
-
-      .row
-        .span8.code
-          %pre.prettyprint.linenums= limit_string bit.code
-      -#.row
-        -#.span8= raw limit_string(@markdown.render(bit.description),2,200)
-      - if can? :manage, bit
+  .bit-list
+    - if @bits.length == 0
+      .bit.row
+        .well.span2
+          No vimbits found
+    - @bits.each do |bit|
+      .bit.row
         .row
-          .span8.btn-group
-            .btn= link_to 'Edit', edit_bit_path(bit)
-            .btn= link_to 'Destroy', bit, :confirm => 'Are you sure?', :method => :delete
-    %hr
-= paginate @bits
+          .span8.row.header
+            .vote-box
+              %i.icon-arrow-up.upvote{ bit_id: bit.id }
+
+              .vote-count= bit.plusminus.to_s
+
+              %i.icon-arrow-down.downvote{ bit_id: bit.id }
+            .title
+              %a{ href: url_for( bit ) }
+                = bit.title
+              .tags
+                - bit.tag_list.each do |t|
+                  %a.label.label-info.tag{href: '/bits?tag='+t}
+                    = t
+
+        .row
+          .span8.code
+            %pre.prettyprint.linenums= limit_string bit.code
+        -#.row
+          -#.span8= raw limit_string(@markdown.render(bit.description),2,200)
+      %hr
+  = paginate @bits
 

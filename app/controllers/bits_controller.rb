@@ -82,9 +82,9 @@ class BitsController < ApplicationController
 
     respond_to do |format|
       if @bit.save
-        expire_page :action => :index
-        expire_page :action => :show
-        expire_page :action => :votes
+        #expire_page :action => :index
+        #expire_page :action => :show
+        #expire_page :action => :votes
         format.html { redirect_to @bit, notice: 'Bit was successfully created.' }
         format.json { render json: @bit, status: :created, location: @bit }
       else

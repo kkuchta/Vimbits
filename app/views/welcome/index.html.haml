@@ -5,19 +5,20 @@
       %p A vimbit is a snippet of a .vimrc.  Share you coolest trick, mapping, setting, or custom command for the Vim editor.  Find new bits and vote up the best ones.
       %p
         %em :set awesome=on
-.row
-  .span6
-    %h3
-      %a.btn.btn-primary{href: '/bits?sort=top' } Top:
-      %a{href: url_for(@top)}=@top.title
-    %p
-      %pre.prettyprint.linenums= limit_string @top.code
-  .span6
-    %h3
-      %a.btn.btn-primary{href: '/bits?sort=new' } Newest:
-      %a{href:url_for(@new)}=@new.title
-    %p
-      %pre.prettyprint.linenums= limit_string @new.code
+- if @top and @new
+  .row
+    .span6
+      %h3
+        %a.btn.btn-primary{href: '/bits?sort=top' } Top:
+        %a{href: url_for(@top)}=@top.title
+      %p
+        %pre.prettyprint.linenums= limit_string @top.code
+    .span6
+      %h3
+        %a.btn.btn-primary{href: '/bits?sort=new' } Newest:
+        %a{href:url_for(@new)}=@new.title
+      %p
+        %pre.prettyprint.linenums= limit_string @new.code
 .blog
   .row
     .span12

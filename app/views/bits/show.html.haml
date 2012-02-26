@@ -16,9 +16,9 @@
             %a.label.label-info.tag{href: '/bits?tag='+t}
               = t
   .row
-    .email.span8
+    .username.span8
       %i
-        = @bit.user.email
+        = @bit.user.username
       posted this on
       = @bit.created_at.strftime( '%B %e, %Y' )
   %p

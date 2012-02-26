@@ -45,7 +45,7 @@
             %li
               .navbar-text
                 Logged in as 
-                %a{ href:edit_user_path(current_user) }= current_user.email
+                %a{ href:edit_user_path(current_user) }= current_user.username
           - else
             %li
               %a{ href:"/users/new" } Sign Up

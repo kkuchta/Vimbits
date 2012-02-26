@@ -1,6 +1,6 @@
 class BitsController < ApplicationController
   load_and_authorize_resource
-  caches_page :index, :show, :votes
+  #caches_page :index, :show, :votes
 
   # GET /bits
   # GET /bits.json

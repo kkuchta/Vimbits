@@ -85,7 +85,6 @@ class BitsController < ApplicationController
       if @bit.save
         expire_page :action => :index
         expire_page :action => :show
-        expire_page :action => :votes
         format.html { redirect_to @bit, notice: 'Bit was successfully created.' }
         format.json { render json: @bit, status: :created, location: @bit }
       else
@@ -104,7 +103,6 @@ class BitsController < ApplicationController
 
     expire_page :action => :index
     expire_page :action => :show
-    expire_page :action => :votes
 
     respond_to do |format|
       if @bit.update_attributes(params[:bit])
@@ -124,7 +122,6 @@ class BitsController < ApplicationController
     elsif request.put?
       expire_page :action => :index
       expire_page :action => :show
-      expire_page :action => :votes
       case params[:direction]
         when 'up'
           current_user.vote_exclusively_for(@bit)
@@ -142,7 +139,6 @@ class BitsController < ApplicationController
     @bit.destroy
     expire_page :action => :index
     expire_page :action => :show
-    expire_page :action => :votes
 
     respond_to do |format|
       format.html { redirect_to bits_url }

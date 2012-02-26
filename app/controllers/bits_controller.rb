@@ -101,11 +101,12 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     @bit.tag_list = tag_list
 
+    expire_page :action => :index
+    expire_page :action => :show
+    expire_page :action => :votes
+
     respond_to do |format|
       if @bit.update_attributes(params[:bit])
-        expire_page :action => :show
-        expire_page :action => :index
-        expire_page :action => :votes
         format.html { redirect_to @bit, notice: 'Bit was successfully updated.' }
         format.json { head :no_content }
       else

@@ -136,6 +136,7 @@ class BitsController < ApplicationController
     @bit = Bit.find(params[:id])
     @bit.destroy
     expire_fragment( :action => 'index' )
+    expire_fragment( controller: 'welcome', action: 'index' )
 
     respond_to do |format|
       format.html { redirect_to bits_url }

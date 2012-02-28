@@ -1,3 +1,6 @@
 %h1 Sign Up
 
+- content_for(:title) do
+  = "Sign Up"
+
 = render partial: 'form', locals: { link_back: url_for(bits_path) }

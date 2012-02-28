@@ -1,4 +1,7 @@
 %h1 Edit user
 
+- content_for(:title) do
+  = "Edit User"
+
 = render partial: 'form', locals: { link_back: url_for(bits_path) }
 

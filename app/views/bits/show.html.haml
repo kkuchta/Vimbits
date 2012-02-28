@@ -1,5 +1,8 @@
 %p#notice= notice
 
+- content_for(:title) do
+  = @bit.title
+
 .bit
   .row
     .span8.row.header

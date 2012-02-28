@@ -1,4 +1,6 @@
 %h1 Log in
+- content_for(:title) do
+  = "Log in"
 = form_tag sessions_path do
   .fieldset
     .field

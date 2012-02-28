@@ -2,6 +2,8 @@
 
 - cache do
   %h1= @title
+  - content_for(:title) do
+    = params[:sort].capitalize
 
   .row
     %form.tag-search{ method:'get', action:('/bits') }

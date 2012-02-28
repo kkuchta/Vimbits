@@ -8,20 +8,6 @@
   }
 }
 .content{
-  .bit{
-    .upvote:hover, .downvote:hover{
-      opacity:.60;
-      cursor:pointer;
-    }
-    .tag{
-      margin-right:5px;
-    }
-    
-
-  }
-  .bit.example{
-    margin-left:20px;
-  }
 
   form.tag-search{
     margin-bottom: 50px;
@@ -41,7 +27,20 @@
     }
   }
 
+  .bit.example{
+    margin-left:20px;
+  }
+
   .bit{
+
+    .upvote:hover, .downvote:hover{
+      opacity:.60;
+      cursor:pointer;
+    }
+    .tag{
+      margin-right:5px;
+    }
+
     .header{
       /*height:100px;*/
       position:relative;
@@ -73,6 +72,9 @@
     }
     .username{
       margin-top:10px;
+    }
+    .comment-summary{
+      margin-left:40px;
     }
   }
 

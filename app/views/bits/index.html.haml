@@ -41,8 +41,12 @@
         .row
           .span8.code
             %pre.prettyprint.linenums= limit_string bit.code
-        -#.row
-          -#.span8= raw limit_string(@markdown.render(bit.description),2,200)
+        - if bit.comments.count > 0
+          .row
+            .span8.comment-summary
+              %a{ href: url_for( bit ) }
+                = bit.comments.count.to_s + " comments"
+
       %hr
   = paginate @bits
 

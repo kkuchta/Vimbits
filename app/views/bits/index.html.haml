@@ -33,32 +33,7 @@
         .well.span2
           No vimbits found
     - @bits.each do |bit|
-      .bit.row
-        .row
-          .span8.row.header
-            .vote-box
-              %i.icon-arrow-up.upvote{ bit_id: bit.id }
-
-              .vote-count= bit.plusminus.to_s
-
-              %i.icon-arrow-down.downvote{ bit_id: bit.id }
-            .title
-              %a{ href: url_for( bit ) }
-                = bit.title
-              .tags
-                - bit.tag_list.each do |t|
-                  %a.label.label-info.tag{href: '/bits?tag='+t}
-                    = t
-
-        .row
-          .span8.code
-            %pre.prettyprint.linenums= limit_string bit.code
-        - if bit.comments.count > 0
-          .row
-            .span8.comment-summary
-              %a{ href: url_for( bit ) }
-                = bit.comments.count.to_s + " comments"
-
+      = render partial: 'bit', locals: { bit: bit }
       %hr
   = paginate @bits
 

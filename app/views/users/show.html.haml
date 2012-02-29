@@ -1,0 +1,11 @@
+.row
+  .span8
+    %h1= @user.username.capitalize
+.row
+  .span4
+    %hr
+
+- @bits.each do |bit|
+  .row
+    .span8
+      =bit.title

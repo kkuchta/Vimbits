@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end  
   end  
 
+  def show
+    @user = User.find(params[:id])
+    @bits = @user.bits.order( :created_at )
+  end
+
   def edit
     @user = User.find(params[:id])
   end

@@ -2,7 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    # Anonymous users
     can :read, Bit
+    can :create, User
+    can :new, User
 
     # If logged in
     if user
@@ -13,10 +17,14 @@ class Ability
       # Normal users
       can :create, Bit
       can :votes, Bit
+      can :show, User
 
       # Can manage Bits you created.
       can :manage, Bit, user: user
       can :manage, Comment, owner: user
+
+      # Can manage yourself
+      can :manage, User, id: user.id
     end
 
     #if user.admin?

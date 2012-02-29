@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(:version => 20120227031349) do
 
   create_table "bits", :force => true do |t|
     t.string   "title"
-    t.text     "code",        :limit => 5000
-    t.text     "description", :limit => 5000
+    t.text     "code"
+    t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "comments", :force => true do |t|

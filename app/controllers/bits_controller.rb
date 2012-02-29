@@ -26,10 +26,11 @@ class BitsController < ApplicationController
       @bits = @bits.tagged_with params[:tag]
     # :tags is a json tag string array
     # (only uses first tag for now)
+    # Should this be an OR or an AND operation?
     elsif params[:tags]
-      tagsArray = ActiveSupport::JSON.decode(params[:tags])
-      if tagsArray.length > 0
-        @bits = @bits.tagged_with tagsArray.first
+      @tagsArray = ActiveSupport::JSON.decode(params[:tags])
+      if @tagsArray.any?
+        @bits = @bits.tagged_with @tagsArray.first
       end
     end
 

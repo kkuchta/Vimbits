@@ -24,6 +24,15 @@ $( () ->
 
         #return false;
     #}
+
+    $('.singleTagBox').keyup( (e)->
+        code = if e.keyCode then e.keyCode else e.which
+        if code == 13
+            e.preventDefault()
+            form = $(this).parents("form:first")
+            form.submit()
+    )
+
 )
 
 vote = (id, direction) ->

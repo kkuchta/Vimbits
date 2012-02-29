@@ -1,9 +1,19 @@
 %p#notice= notice
 
 - cache do
-  %h1= @title
+  %h1
+    = @title
+    - if params[:tag].present?
+      tagged #{params[:tag]}
+    - elsif @tagsArray.present?
+      tagged #{@tagsArray.to_sentence}
   - content_for(:title) do
-    = params[:sort].capitalize
+    - if params[:sort].present?
+      = params[:sort].capitalize
+    - elsif params[:tag].present?
+      = params[:tag].capitalize
+    - elsif @tagsArray
+      = @tagsArray.to_sentence.capitalize
 
   .row
     %form.tag-search{ method:'get', action:('/bits') }

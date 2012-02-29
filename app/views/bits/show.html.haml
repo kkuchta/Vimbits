@@ -1,4 +1,6 @@
-%p#notice= notice
+-if notice
+  .row
+    %p#notice.alert.alert-info.span4= notice
 
 - content_for(:title) do
   = @bit.title

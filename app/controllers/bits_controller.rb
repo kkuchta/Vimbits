@@ -140,7 +140,7 @@ class BitsController < ApplicationController
     expire_fragment( controller: 'welcome', action: 'index' )
 
     respond_to do |format|
-      format.html { redirect_to bits_url }
+      format.html { redirect_to bits_url, notice: 'Bit successfully deleted.' }
       format.json { head :no_content }
     end
   end

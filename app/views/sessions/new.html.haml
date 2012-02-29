@@ -1,4 +1,11 @@
 %h1 Log in
+-if notice
+  .row
+    %p#notice.alert.alert-info.span4= notice
+-if alert
+  .row
+    %p#notice.alert.alert-error.span4= alert
+
 - content_for(:title) do
   = "Log in"
 = form_tag sessions_path do

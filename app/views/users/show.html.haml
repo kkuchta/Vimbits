@@ -5,7 +5,14 @@
   .span4
     %hr
 
-- @bits.each do |bit|
-  .row
-    .span8
-      =bit.title
+.bit-list
+  - if @bits.length == 0
+    .bit.row
+      .well.span2
+        No vimbits found
+  - @bits.each do |bit|
+    = render partial: 'bits/bit', locals: { bit: bit }
+    %hr
+
+= paginate @bits
+  

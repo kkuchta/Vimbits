@@ -20,11 +20,7 @@ $( () ->
             suggestions: allTags
         }
 
-    #$('.tag-search-button').click{
-
-        #return false;
-    #}
-
+    # Submit tag search by pressing enter
     $('.singleTagBox').keyup( (e)->
         code = if e.keyCode then e.keyCode else e.which
         if code == 13

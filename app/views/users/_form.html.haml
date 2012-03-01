@@ -17,4 +17,6 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  .form-actions= f.submit class: 'btn btn-primary'
+  .form-actions
+    = f.submit class: 'btn btn-primary'
+    = link_to 'Cancel', link_back, class: 'btn'

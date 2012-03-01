@@ -23,7 +23,7 @@
   .row
     .username.span8
       %i
-        = @bit.user.username
+        = link_to @bit.user.username, @bit.user
       posted this on
       = @bit.created_at.strftime( '%B %e, %Y' )
   %p

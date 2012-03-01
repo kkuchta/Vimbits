@@ -20,10 +20,15 @@ $( () ->
             suggestions: allTags
         }
 
-    #$('.tag-search-button').click{
+    # Submit tag search by pressing enter
+    $('.singleTagBox').keyup( (e)->
+        code = if e.keyCode then e.keyCode else e.which
+        if code == 13
+            e.preventDefault()
+            form = $(this).parents("form:first")
+            form.submit()
+    )
 
-        #return false;
-    #}
 )
 
 vote = (id, direction) ->

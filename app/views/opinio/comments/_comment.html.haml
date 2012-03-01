@@ -1,6 +1,9 @@
 
 .span8.well.comment{:id => "comment_#{comment.id}"}
-  %p.username= comment.owner.username + " – " + comment.created_at.strftime( '%b %e, %Y' )
+  %p.username
+    = link_to comment.owner.username, comment.owner
+    –
+    = comment.created_at.strftime( '%b %e, %Y' )
   %p.body
     = comment.body
 

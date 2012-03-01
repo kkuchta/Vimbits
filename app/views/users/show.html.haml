@@ -1,9 +1,15 @@
 .row
   .span8
-    %h1= @user.username.capitalize
+    %h1
+      = @user.username.capitalize
+      %a{href:edit_user_path(@user)} [Settings]
 .row
   .span4
     %hr
+- if can? :edit, @user
+  .row
+    .span8
+      .btn-group
 
 .bit-list
   - if @bits.length == 0

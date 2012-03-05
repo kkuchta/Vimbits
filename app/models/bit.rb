@@ -13,4 +13,22 @@ class Bit < ActiveRecord::Base
   def vote_once
     self.user.vote_exclusively_for self
   end
+
+  # Simplified HN algorithm: http://amix.dk/blog/post/19574
+  def hotness
+
+    # Vote score
+    p = self.plusminus
+
+    # Hours since creation of bit (rounded to nearest hour)
+    t = ((Time.now - self.created_at) / 3600).round(0)
+
+    # Gravity
+    g = 1.8
+
+    # Score formula: scores degrade towards 0 as a funciton of time.
+    score = (p-1) / (t+2)**g
+
+    return score
+  end
 end

@@ -5,20 +5,6 @@ class BitsController < ApplicationController
   # GET /bits.json
   def index
     @bits = Bit
-
-    case params[:sort]
-    when "new"
-      @bits = @bits.order("created_at DESC")
-      @title = "New Vimbits"
-    when "rand"
-      @bits = @bits.order("random()")
-      @title = "Random Vimbits"
-    else
-      # Top vimbits
-      @bits = @bits.plusminus_tally
-      @title = "Top Vimbits"
-    end
-
     @markdown = markdown
 
     # :tag is a single tag string.
@@ -34,7 +20,37 @@ class BitsController < ApplicationController
       end
     end
 
-    @bits = @bits.page params[:page]
+    # Handle sorting.  NOTE: "hot" results in an array, not a relation, so
+    # trying to do more db-related operations later on may not work.  Try to
+    # do that stuff before the sort if you can.  Need to figure out a better
+    # way to handle the hotness algorithm- maybe just do it on the db.
+    case params[:sort]
+    when "new"
+      @bits = @bits.order("created_at DESC")
+      @title = "New Vimbits"
+    when "rand"
+      @bits = @bits.order("random()")
+      @title = "Random Vimbits"
+    when "hot"
+      # Only calculate hot values for the last week of bits
+      @bits = @bits.where("bits.created_at > ?", 1.week.ago)
+
+      # Sort by hotness scores descending (0 is lowest hotness)
+      @bits = @bits.sort_by{ |bit| -1 * bit.hotness }
+
+    else
+      # Top vimbits
+      @bits = @bits.plusminus_tally
+      @title = "Top Vimbits"
+    end
+
+    logger.info "inspect=" + @bits.class.name
+    logger.info "isa=" + @bits.is_a?(Array).to_s
+    if @bits.is_a?(Array)
+      @bits = Kaminari.paginate_array(@bits).page(params[:page])
+    else
+      @bits = @bits.page params[:page]
+    end
 
     respond_to do |format|
       format.html # index.html.erb

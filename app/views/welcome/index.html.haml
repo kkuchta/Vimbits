@@ -9,14 +9,14 @@
         %p A vimbit is a snippet of a .vimrc.  Share your coolest trick, mapping, setting, or custom command for the Vim editor.  Find new bits and vote up the best ones.
         %p
           %em :set awesome=on
-  - if @top and @new
+  - if @hot and @new
     .row
       .span6
         %h3
-          %a.btn.btn-primary{href: '/bits?sort=top' } Top:
-          %a{href: url_for(@top)}=@top.title
+          %a.btn.btn-primary{href: '/bits?sort=hot' } Hot:
+          %a{href: url_for(@hot)}=@hot.title
         %p
-          %pre.prettyprint.linenums= limit_string @top.code
+          %pre.prettyprint.linenums= limit_string @hot.code
       .span6
         %h3
           %a.btn.btn-primary{href: '/bits?sort=new' } Newest:

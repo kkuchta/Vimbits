@@ -1,5 +1,6 @@
+- rss_link = ('/bits.rss' + (params[:sort] ? '?sort=' + params[:sort] : '' ) )
 - content_for :head do
-  =auto_discovery_link_tag :rss, ('/bits.rss' + (params[:sort] ? '?sort=' + params[:sort] : '' ) )
+  =auto_discovery_link_tag :rss, rss_link
 -if notice
   .row
     %p#notice.alert.alert-info.span4= notice
@@ -37,5 +38,9 @@
     - @bits.each do |bit|
       = render partial: 'bit', locals: { bit: bit }
       %hr
-  = paginate @bits
+  .row
+    .span8.index-pagination
+      = paginate @bits
+      %a.rss-link{ href:rss_link }
+        %img{ src:image_path('feed-icon.svg' ), width:'36px',height:'36px'}
 

@@ -8,6 +8,11 @@
   }
 }
 .content{
+  form{
+    .field.code textarea{
+      font-family: monospace;
+    }
+  }
   .index-pagination{
     .pagination{
       display:inline-block

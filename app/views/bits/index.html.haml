@@ -39,7 +39,7 @@
       = render partial: 'bit', locals: { bit: bit }
       %hr
   .row
-    .span8.index-pagination
+    .span12.index-pagination
       = paginate @bits
       %a.rss-link{ href:rss_link }
         %img{ src:image_path('feed-icon.svg' ), width:'36px',height:'36px'}

@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= require 'twitter/bootstrap'
  *= require 'global'
  *= require 'google-code-prettify/prettify.css'
 */

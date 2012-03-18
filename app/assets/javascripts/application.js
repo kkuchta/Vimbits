@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require textext.jquery
 //= require_tree .
-//= require twitter/bootstrap
+//= require bootstrap
 //= require google-code-prettify/prettify.js

@@ -18,6 +18,7 @@ Vimbits::Application.routes.draw do
       get 'votes'
     end
   end
+  resources :password_resets
 
   root :to => 'welcome#index'
 

@@ -16,6 +16,8 @@
     .field
       = label_tag :password
       = password_field_tag :password
+    %p
+      = link_to "Reset password", new_password_reset_path
   .form-actions
     = submit_tag "Log in", class: 'btn'
 

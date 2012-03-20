@@ -1,11 +1,8 @@
-.row
-  .span8
-    %h1
-      = @user.username.capitalize
-      %a{href:edit_user_path(@user)} [Settings]
-.row
-  .span4
-    %hr
+.page-header
+  %h1
+    = @user.username.capitalize
+    = link_to '[ Settings ]', edit_user_path(@user)
+
 - if can? :edit, @user
   .row
     .span8

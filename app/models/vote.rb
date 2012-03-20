@@ -14,4 +14,7 @@ class Vote < ActiveRecord::Base
   # Comment out the line below to allow multiple votes per user.
   validates_uniqueness_of :voteable_id, :scope => [:voteable_type, :voter_type, :voter_id]
 
+  def bit
+    voteable if voteable.kind_of?(Bit)
+  end
 end

@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :username
   has_many :bits
   acts_as_voter
+
+  def plusones
+    votes.on_bits.where("bits.user_id <> ?", id)
+  end
+
+  def comments
+    Comment.where(:owner_id => id)
+  end
 end

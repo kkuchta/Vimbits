@@ -4,6 +4,7 @@ class Vote < ActiveRecord::Base
   scope :for_voteable, lambda { |*args| where(["voteable_id = ? AND voteable_type = ?", args.first.id, args.first.class.name]) }
   scope :recent, lambda { |*args| where(["created_at > ?", (args.first || 2.weeks.ago)]) }
   scope :descending, order("created_at DESC")
+  scope :on_bits, where("voteable_type = 'Bit'").joins("join bits ON voteable_id = bits.id")
 
   belongs_to :voteable, :polymorphic => true
   belongs_to :voter, :polymorphic => true

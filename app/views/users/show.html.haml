@@ -1,21 +1,53 @@
 .page-header
   %h1
     = @user.username.capitalize
-    = link_to '[ Settings ]', edit_user_path(@user)
 
 - if can? :edit, @user
   .row
     .span8
       .btn-group
 
-.bit-list
-  - if @bits.length == 0
-    .bit.row
-      .well.span2
-        No vimbits found
-  - @bits.each do |bit|
-    = render partial: 'bits/bit', locals: { bit: bit }
-    %hr
+.tabbable
+  %ul.nav.nav-pills
+    %li.active
+      %a{:href => "#1", :data => {:toggle => "tab"}} Bits
+    %li
+      %a{:href => "#2", :data => {:toggle => "tab"}} +1'd
+    %li
+      %a{:href => "#3", :data => {:toggle => "tab"}} Commented
+    %li
+      = link_to "Settings", edit_user_path(@user)
 
-= paginate @bits
-  
+  .tab-content{:style => "overflow: visible"}
+    #1.tab-pane.active
+      .bit-list
+        - if @bits.length == 0
+          .bit.row
+            .well.span2
+              No vimbits found
+        - @bits.each do |bit|
+          = render partial: "bits/bit", locals: { bit: bit }
+          %hr
+        = paginate @bits, :param_name => "bpage"
+
+    #2.tab-pane
+      .bit-list
+        - if @plusones.length == 0
+          .bit.row
+            .well.span2
+              No +1's found
+        - @plusones.each do |vote|
+          = render partial: "bits/bit", locals: { bit: vote.bit }
+          %hr
+        = paginate @plusones, :param_name => "ppage"
+
+    #3.tab-pane
+      .bit-list
+        - if @commented.length == 0
+          .bit.row
+            .well.span2
+              No comments found
+        - @commented.each do |comment|
+          = render partial: "bits/bit", locals: { bit: comment.bit }
+          %hr
+        = paginate @commented, :param_name => "cpage"

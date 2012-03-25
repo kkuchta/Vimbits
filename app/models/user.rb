@@ -13,6 +13,14 @@ class User < ActiveRecord::Base
   has_many :bits
   acts_as_voter
 
+  def plusones
+    votes.on_bits.where("bits.user_id <> ? and vote=?", id, true)
+  end
+
+  def comments
+    Comment.where(:owner_id => id)
+  end
+
   # Password reset functionality is taken pretty much directly from Railscast
   # #274 - http://asciicasts.com/episodes/274-remember-me-reset-password
 

@@ -1,10 +1,10 @@
 module BitsHelper
   def limit_string( str, lineLimit = 5, charLimit = 1000 )
-    lines = str[0,charLimit].split "\n"
+    lines = str[0,charLimit].lines.to_a
     logger.info "lines = " + lines.inspect
-    retVal = lines[0..4].join "\n"
+    retVal = lines[0..4].join
 
-    retVal += "\n[...]" if retVal.length < str.length
+    retVal += "[...]" if retVal.length < str.length
     return retVal
   end
 

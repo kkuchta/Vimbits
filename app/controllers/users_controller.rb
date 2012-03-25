@@ -17,8 +17,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
     @bits = @user.bits.order( :created_at )
-    @bits = @bits.page params[:page]
+    @bits = @bits.page params[:bpage]
+
+    @plusones = @user.plusones.order( :created_at )
+    @plusones = @plusones.page params[:ppage]
+
+    @commented = @user.comments.order( :created_at )
+    @commented = @commented.page params[:cpage]
   end
 
   def edit

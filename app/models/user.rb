@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   acts_as_voter
 
   def plusones
-    votes.on_bits.where("bits.user_id <> ?", id)
+    votes.on_bits.where("bits.user_id <> ? and vote=?", id, true)
   end
 
   def comments

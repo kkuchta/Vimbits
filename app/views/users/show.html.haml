@@ -15,8 +15,9 @@
       %a{:href => "#2", :data => {:toggle => "tab"}} +1'd
     %li
       %a{:href => "#3", :data => {:toggle => "tab"}} Commented
-    %li
-      = link_to "Settings", edit_user_path(@user)
+    - if can? :update, @user
+      %li
+        = link_to "Settings", edit_user_path(@user)
 
   .tab-content{:style => "overflow: visible"}
     #1.tab-pane.active

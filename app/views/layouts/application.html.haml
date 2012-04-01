@@ -40,6 +40,10 @@
           %li.divider-vertical
           %li
             %a{ href:'/welcome/about' } About
+          %li.divider-vertical
+          %li
+            %form.navbar-form{ action: bits_path, method: 'get' }
+              %input.input-small{ name: 'title', type: 'text', placeholder: 'Search Bits' }
         %ul.nav.pull-right
           - if current_user
             %li

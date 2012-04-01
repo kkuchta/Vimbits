@@ -44,7 +44,7 @@ class BitsController < ApplicationController
       @title = "Top Vimbits"
     end
 
-    # search title by substring (TODO: replace with with ferret)
+    # search title by substring 
     if params[:title]
       @bits = Bit.find(:all, :conditions => ["title like ?", "%#{params[:title]}%"])
       @title = "Vimbits with \"#{params[:title]}\" in the title"

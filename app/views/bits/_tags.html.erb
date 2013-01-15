@@ -1,4 +1,4 @@
 <script type="text/javascript">
   // Include all known tags.  Replace this with something async if it gets slow.
-  var allTags = [<%= Bit.tag_counts.map { |tag| "'" + tag.name + "'" } .join ',' %>];
+  var allTags = [<%= raw Bit.tag_counts.map { |tag| "'" + tag.name + "'" } .join ',' %>];
 </script>

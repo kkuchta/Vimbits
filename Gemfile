@@ -10,10 +10,12 @@ gem 'haml'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby'
-gem "opinio", "~> 0.4"
+gem "opinio", "0.4"
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Gems used only for assets and not required
@@ -31,7 +33,7 @@ end
 #gem 'twitter-bootstrap-rails', :group => :assets
 
 gem 'jquery-rails'
-gem 'thumbs_up'
+gem 'thumbs_up', '0.5.1'
 gem 'cancan'
 gem 'kaminari'
 gem 'redcarpet'

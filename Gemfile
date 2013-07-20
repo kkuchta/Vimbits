@@ -35,7 +35,7 @@ end
 #gem 'twitter-bootstrap-rails', :group => :assets
 
 gem 'jquery-rails'
-gem 'thumbs_up', '0.5.1'
+gem 'thumbs_up', '0.6.2'
 gem 'cancan'
 gem 'kaminari'
 gem 'redcarpet'

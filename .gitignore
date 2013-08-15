@@ -15,3 +15,6 @@
 /tmp
 
 .DS_Store
+
+# Ignore sass-cache
+/sass-cache

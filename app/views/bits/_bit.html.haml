@@ -1,4 +1,3 @@
-
 .bit.row
   .row
     .span8.row.header
@@ -18,7 +17,7 @@
 
   .row
     .span8.code
-      %pre.prettyprint.linenums= limit_string bit.code
+      %pre.prettyprint.linenums.lang-vim= limit_string bit.code
   - if bit.comments.count > 0
     .row
       .span8.comment-summary
